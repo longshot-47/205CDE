@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>control</title>
+</head>
+    <script>
+        history.forward()
+    </script>
+
+    <style>
+        .button {
+        background: white;
+        padding: 20px 40px;
+        margin-top: 10px;
+        color: aqua;
+        font-family: 'Poppins';
+        letter-spacing: 2px;
+        transition: 0.5s;
+    }
+
+    .button:hover {
+        letter-spacing: 4px;
+    }
+    </style>
+
+<body style="background-color: bisque;">
+    <h1 style="color: red;">Warning! Booking deleted will not be able to recover!</h1>
+
+    <form action="/open_accept" method="post">
+        <div class="button" style="display: inline-block; bottom: 50%; left: 20%; position: absolute;">
+            <a style="text-decoration: none; color: green;" href="/delete_new">Delete New Booking</a>
+        </div>
+        </form>
+    
+        <div class="button" style="display: inline-block; bottom: 50%; left: 43%; position: absolute;">
+            <a style="text-decoration: none; color: blueviolet;" href="/delete_not">Delete not-confirmed booking</a>
+        </div>
+    
+        <div class="button" style="display: inline-block; bottom: 50%; left: 70%; position: absolute;">
+            <a style="text-decoration: none; color: red;" href="/delete_confirm">Delete Confirm Booking</a>
+        </div>
+</body>

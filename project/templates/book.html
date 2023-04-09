@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body style="background-color: antiquewhite;">
+    <a style='color: gray; right: 0; top: 0;  position: absolute;' href="login.html">Admin</a>
+    <h1 style="top:10px;">Booking</h1>
+    
+    <h4>Please enter your email</h4>
+    <form action='/submit' method='post'>
+        <input type="email" id="email" name="email" size="50" required>
+    <br>
+
+    <h4>Please select the date</h4>
+    
+        <input type="date" id="date" name="date" required>
+    <br>
+    
+    <h4>Please select the start time</h4>
+    
+        <input type="time" id="time" name="time" required>
+    <br>
+    
+    <h4>Food menu</h4>
+    
+    <div class="container mt-5" style="top: 300px; left: 15%; position: absolute;">
+        <div class="row">
+          <div class="col-sm-4">
+            <h3 style="color: red;">Dim Sum</h3>
+            <img src="Dim_sum.jpg" class="rounded" alt="A lot of dim sum" width="305" height="235">
+            <p class="text-success">A lot of dim sum is included! Each set come with 1 Coca Cola</p>
+            <p class="text-success">$67 per set</p>
+          </div>
+          <div class="col-sm-4">
+            <h3 style="color: red;">Pizza</h3>
+            <img src="pizza.jpg" class="rounded" alt="8 inch pizza" width="305"  height="235">
+            <p class="text-success">8 inch pizza for each set! One Coca Cola is included!</p>
+            <p class="text-success">$80 per set</p>
+          </div>
+          <div class="col-sm-4">
+            <h3 style="color: red">Coca Cola</h3>
+            <img src="coke.jpg" class="rounded" alt="Coke" width="305" height="235">        
+            <p class="text-success">1 set, 1 can! Truly classic!</p>
+            <p class="text-success">$6 per set</p>
+          </div>
+        </div>
+      </div>
+    
+    <div class="container mt-5" style="top: 700px; left: 20%; position: absolute;">
+      <div class="row">  
+        <div class="col-sm-6">
+            <h3 style="color: red;">Alcohol drinks</h3>
+            <img src="alcohol.jpg" class="rounded" alt="A lot of dim sum" width="305" height="235">
+            <p class="text-success">5 cans of beer and 1 bag of peanuts included!</p>
+            <p class="text-success">$100 per set</p>
+            <p style="color: brown;">18 years old or above only</p>
+            <p style="opacity: 0.1;">In fact, we don't care</p>  
+          </div>
+          <div class="col-sm-6">
+            <h3 style="color: red;">Other</h3>
+            <img src="other.jpg" class="rounded" alt="?" width="305"  height="235">
+            <p class="text-success">What do you want?</p>
+            <p class="text-success">Tell us via email!(Only after the booking is confirmed)</p>
+          </div>
+        </div>
+      </div>
+
+    <div class="container mt-5" style="top: 1200px; position: absolute; font-size: 30px;">
+      <div class="row">
+        <div class="col-sm-6">
+          <p>Please choose the food you want</p><br>
+          
+            <input type="radio" name="food" value="dim sum" required>
+            <label>Dim Sum ($67 per set)</label><br>
+            <input type="radio" name="food" value="pizza">
+            <label>Pizza ($80 per set)</label><br>      
+            <input type="radio" name="food" value="coca cola">      
+            <label>Coca Cola ($6 per can)</label><br>
+            <input type="radio" name="food" value="alcohol drinks">      
+            <label>Alcohol drinks ($100 per set)</label><br>
+            <input type="radio" name="food" value="other">      
+            <label>Others/ do not need food</label>            
+        
+        </div>
+      </div>
+    </div>
+    
+    <h4 style="top:1620px; position: absolute;">And how many set of food you want (skip this if you don't need food)</h4>
+    <input style="top:1650px; position: absolute;" type="number" id='food_amount' name='amount' min="0" max="99">
+    
+    <h4 style="top: 1700px; position: absolute;">How many people will join</h4>
+      <input style="top: 1730px; position: absolute;" type="number" id="people_amount" name="people" min="1" max="99" required>
+    
+    <h4 style="top: 1800px; position: absolute;">Need staff assistance on site?</h4>
+
+    <div style="top: 1830px; position: absolute; font-size: 30px;" class="staff_select">
+     <input  type="radio" name="staff" value="Yes" required>
+     <label>Yes</label><br>
+     <input type="radio" name="staff" value="No">
+     <label>No</label>
+    </div>
+    
+      <input  style="top: 2000px; position: absolute; font-size: 40px;" type="submit" value="Submit booking">
+    </form>
+    
+</body>
+</html>

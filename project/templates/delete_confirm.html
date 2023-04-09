@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>delete booking</title>
+</head>
+    <script>
+        history.forward()
+    </script>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+
+<body style="background-color: bisque;">
+    <a style='color: gray; right: 0; top: 0;  position: absolute;' href="logout.html">Logout</a>
+    <h1 style="color: red;">Last warning! Booking deleted will be lost forever!</h1>
+    <h4 style="color: blue;">Confirmed booking</h4>
+    <table>
+        <tr><th>Email</th><th>Date</th><th>Start time</th><th>Food</th><th>Food amount</th><th>People amount</th><th>Require staff</th></th></tr>
+        {%for i in range(0, len1)%}
+        <tr><td>{{confirmed[i].email}}</td><td>{{confirmed[i].date}}</td><td>{{confirmed[i].start_time}}</td><td>{{confirmed[i].food}}</td><td>{{confirmed[i].food_amount}}</td><td>{{confirmed[i].people_amount}}</td><td>{{confirmed[i].staff}}</td></tr>
+        {%endfor%}
+    </table>
+
+    <form action="/process_delete_confirm" method="post">
+        <label>Choose a booking to delete:</label>
+        <select name="process_delete">
+        {%for i in range(0, len1)%}
+          <option value= "{{confirmed[i].email}}">{{confirmed[i].date}} @ {{confirmed[i].start_time}}</option>
+          {%endfor%}
+        </select>
+        <br><br>
+        <input type="submit" value="Delete">
+      </form>
+</body>
+</html>

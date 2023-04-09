@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update booking</title>
+</head>
+
+<script>
+    history.forward()
+</script>
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+
+      .button {
+        background: white;
+        padding: 20px 40px;
+        margin-top: 10px;
+        color: aqua;
+        font-family: 'Poppins';
+        letter-spacing: 2px;
+        transition: 0.5s;
+    }
+
+    .button:hover {
+        letter-spacing: 4px;
+    }
+    </style>
+</style>
+
+<body style="background-color: bisque;">
+    <a style='color: gray; right: 0; top: 0px;  position: absolute;'  href="/menu" method="post">Main Menu</a>
+    <a style='color: gray; right: 0; top: 15px;  position: absolute;' href="logout.html">Logout</a>
+    <h4 style="color: blue;">New booking waiting to be processed</h4>
+    
+    <table>
+        <tr><th>Email</th><th>Date</th><th>Start time</th><th>Food</th><th>Food amount</th><th>People amount</th><th>Require staff</th></th></tr>
+        {%for i in range(0, len1)%}
+            <tr><td>{{booked[i].email}}</td><td>{{booked[i].date}}</td><td>{{booked[i].start_time}}</td><td>{{booked[i].food}}</td><td>{{booked[i].food_amount}}</td><td>{{booked[i].people_amount}}</td><td>{{booked[i].staff}}</td></tr>
+        {%endfor%}
+    </table>
+    
+    <h4 style="color: green;">Not-confirmed booking</h4>
+    <table>
+        <tr><th>Email</th><th>Date</th><th>Start time</th><th>Food</th><th>Food amount</th><th>People amount</th><th>Require staff</th></th></tr>
+        {%for i in range(0, len2)%}
+        <tr><td>{{not_confirmed[i].email}}</td><td>{{not_confirmed[i].date}}</td><td>{{not_confirmed[i].start_time}}</td><td>{{not_confirmed[i].food}}</td><td>{{not_confirmed[i].food_amount}}</td><td>{{not_confirmed[i].people_amount}}</td><td>{{not_confirmed[i].staff}}</td></tr>
+        {%endfor%}
+    </table>
+
+    <form action="/open_update_new" method="post">
+        <div class="button" style="display: inline-block; bottom: 0; left: 25%; position: absolute;">
+            <a style="text-decoration: none; color: green;" href="/open_update_new">Modify New Booking</a>
+        </div>
+        </form>
+    
+        <div class="button" style="display: inline-block; bottom: 0; left: 55%; position: absolute;">
+            <a style="text-decoration: none; color: blueviolet;" href="/open_update_not">Modify not-confirmed Booking</a>
+        </div>
+      </form>

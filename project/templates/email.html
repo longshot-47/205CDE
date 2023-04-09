@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>template</title>
+</head>
+
+    <body style="background-color: bisque;">
+        <a style='color: gray; right: 0; top: 0px;  position: absolute;'  href="/menu" method="post">Main Menu</a>
+        <a style='color: gray; right: 0; top: 15px;  position: absolute;' href="logout.html">Logout</a>
+        
+        <h3>Copy the template below and send it to the following email: <p class="email_address"><a href="mailto:{{email}}">{{email}}</a></p></h3>
+
+        <p>
+            Dear Sir/Madam:<br><br>
+                We (Best Party Room) have received your booking and happy to inform you that your booking is accepted!<br>
+                Details are as follow:<br><br>
+                    
+                    Date: {{detail[0].date}}<br><br>
+                    Time: {{detail[0].start_time}}<br><br>
+                    Food: {{detail[0].food}}<br><br>
+                    Food Amount: {{detail[0].food_amount}}<br><br>
+                    Participants: {{detail[0].people_amount}}<br><br>
+                    Need staff help: {{detail[0].staff}}<br><br>
+
+                    The fee for each person is $100 per hour. <br><br>
+
+                You are reminded to deposit $700 to this bank account: XXX-XXXXXXXX within 24 hours otherwise your booking will be declined.<br>
+
+                If you need to change anything, please reply to this email.<br><br>
+
+                !WE WILL NOT CHANGE THE BOOKING ONCE WE HAVE RECEIVED YOUR DEPOSIT!<br><br>
+
+            Best,<br>
+                Best Party Room
+
+        </p>
+
+        <h2 style="color: red;">Confirm the email is sent before click the button below</h2>
+        <form action="/complete_process" method="post">
+            <input type="submit" value="Complete"> 
+            <select hidden name="email"> <!--let flask to get variable 'email'-->
+                <option value="{{email}}">{{email}}</option>
+        </form>
+</html>
