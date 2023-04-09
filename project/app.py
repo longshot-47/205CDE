@@ -57,7 +57,7 @@ def submit():
                                 cursorclass=pymysql.cursors.DictCursor)
     
     with connection.cursor() as cursor:
-        cursor.execute("Insert INTO BOOKED (email, date, start_time, food, food_amount, people_amount, staff) VAlUES (\'%s\', \'%s\', \'%s\', \'%s\', \'%s\', \'%s\', \'%s\')"%( email, date, time, food, amount, people, staff ))
+        cursor.execute("Insert INTO booked (email, date, start_time, food, food_amount, people_amount, staff) VAlUES (\'%s\', \'%s\', \'%s\', \'%s\', \'%s\', \'%s\', \'%s\')"%( email, date, time, food, amount, people, staff ))
         connection.commit()
     return render_template('success.html')
 
